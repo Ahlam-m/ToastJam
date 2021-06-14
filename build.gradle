@@ -3,9 +3,12 @@
 buildscript {
 
     repositories {
+        maven {
+            url 'https://maven.google.com'
+        }
         google()
         jcenter()
-        //maven {url  "https://dl.bintray.com/ahlam-me1/Toasty"}
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2' //3.6.0-rc03
@@ -16,6 +19,7 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+
 
 allprojects {
     repositories {
