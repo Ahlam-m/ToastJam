@@ -1,34 +1,8 @@
 apply plugin: 'com.android.library'
 
-/*ext {
-    bintrayRepo = 'com.ahlam.toastjam'
-    bintrayName = 'com.ahlam.toastjam'
-
-    publishedGroupId = 'com.ahlam.toastjam'
-    libraryName = 'ToastJam'
-    artifact = 'toastjam'
-
-    libraryDescription = 'This is description about this library'
-
-    siteUrl = 'https://github.com/Ahlam-M/ToastJam'
-    gitUrl = 'https://github.com/Ahlam-M/ToastJam.git'
-    githubRepository = 'github.com/Ahlam-M/ToastJam'
-
-    libraryVersion = 'v1.0.0'
-
-    developerId = 'Ahlam-M'
-    developerName = 'Ahlam M.'
-    developerEmail = ''
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ['Apache 2.0']
-}*/
-
-
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 16
@@ -38,7 +12,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-        //consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -51,16 +24,11 @@ android {
 }
 
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
-    testImplementation 'junit:junit:4.13.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0-alpha02'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
 }
-
-apply from: 'install.gradle'
-apply from: 'bintray.gradle'
