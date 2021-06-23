@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
         ToastJam.setup(this, "Hi there !")
                 .setGravity(TGravity.BOTTOM)
-                .setShape(TShape.RAWNED)
+                .setShape(TShape.OVAL)
                 .setTextColor(ContextCompat.getColor(this, R.color.text_color))
                 .setColor(ContextCompat.getColor(this, R.color.background_color))
-                .setDurationInSec(4)
-                .show();
+                .setDurationInSec(10)
+                .start();
     }
 }

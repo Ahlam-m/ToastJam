@@ -97,8 +97,14 @@ public class ToastJam {
                 case RAWNED:
                     tshape = com.ahlam.toastjam.R.drawable.rawned;
                     break;
-                default:
+                case ELLIPSE:
+                    tshape = com.ahlam.toastjam.R.drawable.ellipse;
+                    break;
+                case ROUND_SQUARE:
                     tshape = com.ahlam.toastjam.R.drawable.round_square;
+                    break;
+                default:
+                    tshape = com.ahlam.toastjam.R.drawable.oval;
                     break;
             }
         } catch (Exception e) {
@@ -138,10 +144,9 @@ public class ToastJam {
         }
     }
 
-    public void show() {
+    public void start() {
 
         //create toastjam
-        toastjam.view.setPadding(50, 30, 50, 30);
         toastjam.view.setTextColor(text_color);
         toastjam.view.setBackground(prepareBackground());
 
@@ -157,6 +162,7 @@ public class ToastJam {
         runnable = new Runnable() {
             @Override
             public void run() {
+                //on duration pass -> hide it
                 rootview.removeView(parent);
                 toastjamHandler.removeCallbacks(runnable);
             }
@@ -166,5 +172,4 @@ public class ToastJam {
         long showtime = Math.round((duration_sec + 0.25) * 1000.0);
         toastjamHandler.postDelayed(runnable, showtime);
     }
-
 }
