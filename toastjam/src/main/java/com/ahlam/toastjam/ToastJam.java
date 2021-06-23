@@ -7,11 +7,13 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.GravityInt;
@@ -32,9 +34,13 @@ public class ToastJam {
     private @ColorInt int text_color;
     private @DrawableRes int tshape;
     private @GravityInt int tgravity;
+    private double duration_sec = 5;
 
 
-    private ToastJam(Context context){
+    private Runnable runnable;
+    private Handler toastjamHandler;
+
+    private ToastJam(Context context) {
         this.context = context;
         parent = (LinearLayout) View.inflate(context, com.ahlam.toastjam.R.layout.toastjam_layout, null);
         view = (TextView) parent.findViewById(com.ahlam.toastjam.R.id.toastjam);
@@ -46,15 +52,15 @@ public class ToastJam {
         tgravity = Gravity.BOTTOM;
     }
 
-    public static ToastJam setup(Context context, String msg){
+    public static ToastJam setup(Context context, String msg) {
         toastjam = new ToastJam(context);
         toastjam.view.setText(msg);
         return toastjam;
     }
 
-    public ToastJam setGravity(com.ahlam.toastjam.entities.TGravity gravity){
+    public ToastJam setGravity(com.ahlam.toastjam.entities.TGravity gravity) {
         try {
-            switch (gravity){
+            switch (gravity) {
                 case TOP:
                     tgravity = Gravity.TOP;
                     break;
@@ -65,24 +71,24 @@ public class ToastJam {
                     tgravity = Gravity.BOTTOM;
                     break;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return toastjam;
     }
 
 
-    public ToastJam setColor(@ColorInt int color){
+    public ToastJam setColor(@ColorInt int color) {
         try {
             background_color = color;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return toastjam;
     }
 
 
-    public ToastJam setShape(com.ahlam.toastjam.entities.TShape shape){
+    public ToastJam setShape(com.ahlam.toastjam.entities.TShape shape) {
         try {
             switch (shape) {
                 case SQUARE:
@@ -95,26 +101,35 @@ public class ToastJam {
                     tshape = com.ahlam.toastjam.R.drawable.round_square;
                     break;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return toastjam;
     }
 
-    public ToastJam setTextColor(@ColorInt int color){
+    public ToastJam setTextColor(@ColorInt int color) {
         try {
             text_color = color;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return toastjam;
     }
 
-    private Drawable prepareBackground(){
+    public ToastJam setDurationInSec(double dur) {
+        try {
+            duration_sec = dur;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return toastjam;
+    }
+
+    private Drawable prepareBackground() {
         try {
             Drawable unwrappedDrawable = AppCompatResources.getDrawable(context, tshape);
             Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            wrappedDrawable.setColorFilter(new PorterDuffColorFilter(background_color,PorterDuff.Mode.SRC_IN));
+            wrappedDrawable.setColorFilter(new PorterDuffColorFilter(background_color, PorterDuff.Mode.SRC_IN));
             return wrappedDrawable;
 
         } catch (Exception e) {
@@ -124,20 +139,32 @@ public class ToastJam {
     }
 
     public void show() {
+
         //create toastjam
         toastjam.view.setPadding(50, 30, 50, 30);
         toastjam.view.setTextColor(text_color);
         toastjam.view.setBackground(prepareBackground());
 
         //parent gravity
-        parent.setGravity(tgravity|Gravity.CENTER_HORIZONTAL);
+        parent.setGravity(tgravity | Gravity.CENTER_HORIZONTAL);
 
         //add toastjam to the window
-        ViewGroup rootview = (ViewGroup) ((Activity) context).findViewById(android.R.id.content);
+        final ViewGroup rootview = (ViewGroup) ((Activity) context).findViewById(android.R.id.content);
         rootview.addView(parent);
+
+        //hide toast after duration
+        toastjamHandler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                rootview.removeView(parent);
+                toastjamHandler.removeCallbacks(runnable);
+            }
+        };
+
+        //calculate duration in millisecond
+        long showtime = Math.round((duration_sec + 0.25) * 1000.0);
+        toastjamHandler.postDelayed(runnable, showtime);
     }
 
-    private void hideToastJam(){
-
-    }
 }

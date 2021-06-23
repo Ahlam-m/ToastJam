@@ -6,10 +6,9 @@
     android:padding="30dp"
     tools:context=".MainActivity">
 
-
     <Button
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="button"/>
+        android:text="button" />
 
 </LinearLayout>
