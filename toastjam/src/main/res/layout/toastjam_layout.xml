@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
     android:gravity="center_horizontal"
-    android:paddingTop="40dp">
+    android:paddingTop="40dp"
+    android:paddingBottom="40dp">
 
     <TextView
         android:id="@+id/toastjam"
