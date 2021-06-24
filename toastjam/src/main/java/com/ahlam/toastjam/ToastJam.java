@@ -1,5 +1,8 @@
 package com.ahlam.toastjam;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +14,8 @@ import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,7 +39,7 @@ public class ToastJam {
     private @ColorInt int text_color;
     private @DrawableRes int tshape;
     private @GravityInt int tgravity;
-    private double duration_sec = 5;
+    private double duration_sec;
 
 
     private Runnable runnable;
@@ -50,6 +55,7 @@ public class ToastJam {
         text_color = Color.WHITE;
         tshape = com.ahlam.toastjam.R.drawable.round_square;
         tgravity = Gravity.BOTTOM;
+        duration_sec = 3;
     }
 
     public static ToastJam setup(Context context, String msg) {
@@ -123,11 +129,7 @@ public class ToastJam {
     }
 
     public ToastJam setDurationInSec(double dur) {
-        try {
-            duration_sec = dur;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        duration_sec = dur;
         return toastjam;
     }
 
@@ -140,7 +142,7 @@ public class ToastJam {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return context.getResources().getDrawable(com.ahlam.toastjam.R.drawable.round_square);
+            return AppCompatResources.getDrawable(context, com.ahlam.toastjam.R.drawable.round_square);
         }
     }
 
@@ -155,7 +157,9 @@ public class ToastJam {
 
         //add toastjam to the window
         final ViewGroup rootview = (ViewGroup) ((Activity) context).findViewById(android.R.id.content);
+        // {1} //
         rootview.addView(parent);
+
 
         //hide toast after duration
         toastjamHandler = new Handler();
@@ -163,13 +167,29 @@ public class ToastJam {
             @Override
             public void run() {
                 //on duration pass -> hide it
-                rootview.removeView(parent);
-                toastjamHandler.removeCallbacks(runnable);
+                // {4} //
+                AnimClass.hide(toastjam.view).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        // {5} //
+                        rootview.removeView(parent);
+                        toastjamHandler.removeCallbacks(runnable);
+                    }
+                });
             }
         };
 
-        //calculate duration in millisecond
-        long showtime = Math.round((duration_sec + 0.25) * 1000.0);
-        toastjamHandler.postDelayed(runnable, showtime);
+        // {2} //
+        AnimClass.show(toastjam.view).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                //calculate duration (of full opacity) in millisecond
+                long showtime = Math.round(duration_sec * 1000.0);
+                // {3} //
+                toastjamHandler.postDelayed(runnable, showtime);
+            }
+        });
     }
 }
