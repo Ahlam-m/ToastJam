@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ ellipse.xml belongs to ToastJam project.
+  ~ Licensed under the Apache License, Version 2.0
+  ~
+  ~ developed by: github@Ahlam-M
+  -->
+
 <shape android:shape="oval"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
 
     <solid android:color="@android:color/darker_gray" />
     <size

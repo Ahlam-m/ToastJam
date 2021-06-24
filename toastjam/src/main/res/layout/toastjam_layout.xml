@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ toastjam_layout.xml belongs to ToastJam project.
+  ~ Licensed under the Apache License, Version 2.0
+  ~
+  ~ developed by: github@Ahlam-M
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

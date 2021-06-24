@@ -1,3 +1,10 @@
+/*
+ * MainActivity.java belongs to ToastJam project.
+ * Licensed under the Apache License, Version 2.0
+ *
+ * developed by: github@Ahlam-M
+ */
+
 package com.ahlam.toastjam_sample;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ToastJam.setup(this, "Hi there !")
-                .setGravity(TGravity.CENTER)
+                .setGravity(TGravity.BOTTOM)
                 .setShape(TShape.ELLIPSE)
                 .setTextColor(ContextCompat.getColor(this, R.color.text_color))
                 .setColor(ContextCompat.getColor(this, R.color.background_color))

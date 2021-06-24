@@ -1,5 +1,3 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ahlam.toastjam" >
+<manifest package="com.ahlam.toastjam" >
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 </manifest>

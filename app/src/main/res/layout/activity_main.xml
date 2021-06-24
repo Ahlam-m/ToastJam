@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ activity_main.xml belongs to ToastJam project.
+  ~ Licensed under the Apache License, Version 2.0
+  ~
+  ~ developed by: github@Ahlam-M
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +16,18 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="button" />
+        android:text="button 1" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="button 2"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="button 3"
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

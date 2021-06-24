@@ -1,8 +1,14 @@
+/*
+ * ToastJam.java belongs to ToastJam project.
+ * Licensed under the Apache License, Version 2.0
+ *
+ * developed by: github@Ahlam-M
+ */
+
 package com.ahlam.toastjam;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -14,11 +20,8 @@ import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.GravityInt;
@@ -35,10 +38,14 @@ public class ToastJam {
 
     private final Context context;
 
-    private @ColorInt int background_color;
-    private @ColorInt int text_color;
-    private @DrawableRes int tshape;
-    private @GravityInt int tgravity;
+    private @ColorInt
+    int background_color;
+    private @ColorInt
+    int text_color;
+    private @DrawableRes
+    int tshape;
+    private @GravityInt
+    int tgravity;
     private double duration_sec;
 
 

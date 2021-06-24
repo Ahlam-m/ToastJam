@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape android:shape="rectangle"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ square.xml belongs to ToastJam project.
+  ~ Licensed under the Apache License, Version 2.0
+  ~
+  ~ developed by: github@Ahlam-M
+  -->
 
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
 
     <solid android:color="@android:color/darker_gray" />
 </shape>
