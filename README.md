@@ -1,3 +1,4 @@
+
 # ToastJam Android Dependency
 
 ToastJam is a dependency for showing beautiful toast messages with custom shapes and colors.
@@ -82,3 +83,4 @@ Any suggestions will be welcome ^_^
 Licensed under the Apache License, Version 2.0
 Reference: http://www.apache.org/licenses/LICENSE-2.0
 ```
+
