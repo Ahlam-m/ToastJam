@@ -50,7 +50,7 @@ dependencies {
 ```
 
 ## Usage
->  Basic example:
+> Basic example:
 
 ```
 ToastJam.setup(this, "Hi there !").start();
