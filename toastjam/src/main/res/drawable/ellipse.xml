@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ rawned.xml belongs to ToastJam project.
+  ~ ellipse.xml belongs to ToastJam project.
   ~ Licensed under the Apache License, Version 2.0
   ~
   ~ developed by: github@Ahlam-M
   -->
 
-<shape android:shape="rectangle"
+<shape android:shape="oval"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <solid android:color="@android:color/darker_gray" />
-    <corners android:bottomRightRadius="15dp"
-        android:bottomLeftRadius="5dp"
-        android:topLeftRadius="15dp"
-        android:topRightRadius="5dp"/>
+    <size
+        android:height="40dp"
+        android:width="70dp"/>
 </shape>

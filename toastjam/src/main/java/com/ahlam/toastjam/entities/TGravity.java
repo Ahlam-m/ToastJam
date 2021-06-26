@@ -1,7 +1,12 @@
+/*
+ * TGravity.java belongs to ToastJam project.
+ * Licensed under the Apache License, Version 2.0
+ *
+ * developed by: github@Ahlam-M
+ */
+
 package com.ahlam.toastjam.entities;
 
-public class TGravity {
-    public static final int TOP = 1;
-    public static final int CENTER = 2;
-    public static final int BOTTOM = 3;
+public enum TGravity {
+    TOP, CENTER, BOTTOM
 }

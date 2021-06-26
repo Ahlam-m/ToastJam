@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ round_square.xml belongs to ToastJam project.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ oval.xml belongs to ToastJam project.
   ~ Licensed under the Apache License, Version 2.0
   ~
   ~ developed by: github@Ahlam-M
@@ -9,6 +10,9 @@
     android:shape="rectangle">
 
     <solid android:color="@android:color/darker_gray" />
-    <corners android:radius="10dp" />
+    <corners android:radius="50dp" />
+
+    <size android:width="100dp"
+        android:height="50dp"/>
 
 </shape>
