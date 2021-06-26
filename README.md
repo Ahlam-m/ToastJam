@@ -1,14 +1,14 @@
 # ToastJam Android Dependency
-```
+
 ToastJam is a dependency for showing beautiful toast messages with custom shapes and colors.
 ToastJam lets you to simply customize messages showing in your app and make them look native and more belonging to your app rather than same boring default one.
-```
 
 
 ## How to integrate ToastJam into your project?
 
 ##### 1) Add the JitPack repository to the bottom of root build.gradle:
-* ** For gradle: **
+> For gradle:
+
 ```
 allprojects {
 		repositories {
@@ -18,7 +18,8 @@ allprojects {
 	}
 ```
 
-* ** For maven: **
+> For maven:
+         
 ```
 <repositories>
 	<repository>
@@ -29,29 +30,33 @@ allprojects {
 ```
 
 ##### 2) Add the following dependency to the project level build.gradle:
-* ** For gradle: **
+> For gradle:
+
 ```
 dependencies {
-	implementation 'com.ahlam.toastjam:toastjam:v2.0.0'
+	implementation 'com.github.Ahlam-M:ToastJam:v2.0.0'
 }
 ```
 
-* ** For maven: **
+> For maven:
+   
 ```
 <dependency>
-  <groupId>com.ahlam.toastjam</groupId>
-  <artifactId>toastyjam</artifactId>
+  <groupId>com.github.Ahlam-M</groupId>
+  <artifactId>ToastJam</artifactId>
   <version>v2.0.0</version>
 </dependency>
 ```
 
 ## Usage
-* ** Basic example: **
+>  Basic example:
+
 ```
 ToastJam.setup(this, "Hi there !").start();
 ```
 
-* ** Full example with all available features: **
+> Full example with all available features:
+
 ```
 ToastJam.setup(this, "Hi there !")
         .setGravity(TGravity.BOTTOM)
