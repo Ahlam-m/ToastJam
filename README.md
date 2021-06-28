@@ -8,39 +8,35 @@ ToastJam lets you to simply customize messages showing in your app and make them
 ## How to integrate ToastJam into your project?
 
 ##### 1) Add the JitPack repository to the bottom of root build.gradle:
-> For gradle:
-
+**For gradle:**
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
 ```
 
-> For maven:
-         
+**For maven:**
 ```
 <repositories>
-	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
 </repositories>
 ```
 
 ##### 2) Add the following dependency to the project level build.gradle:
-> For gradle:
-
+**For gradle:**
 ```
 dependencies {
-	implementation 'com.github.Ahlam-M:ToastJam:v2.0.0'
+  implementation 'com.github.Ahlam-M:ToastJam:v2.0.0'
 }
 ```
 
-> For maven:
-   
+**For maven:**
 ```
 <dependency>
   <groupId>com.github.Ahlam-M</groupId>
@@ -50,14 +46,12 @@ dependencies {
 ```
 
 ## Usage
-> Basic example:
-
+**Basic example:**
 ```
 ToastJam.setup(this, "Hi there !").start();
 ```
 
-> Full example with all available features:
-
+**Full example with all available features:**
 ```
 ToastJam.setup(this, "Hi there !")
         .setGravity(TGravity.BOTTOM)
@@ -75,7 +69,7 @@ Submit any issues here: [ToastJam Issues](https://github.com/Ahlam-M/ToastJam/is
 
 ## Feedback
 If you have an experience using ToastJam, please feel free to share it with us through this form: [ToastJam Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSe-7PS6md5rEibiWRekf4BFCVmLrR2-67oBvNavRmUnvic1Qg/viewform)
-Any suggestions will be welcome ^_^
+Any suggestions are welcome.
 
 
 ## License
