@@ -5,6 +5,9 @@ ToastJam is a dependency for showing beautiful toast messages with custom shapes
 ToastJam lets you to simply customize messages showing in your app and make them look native and more belonging to your app rather than same boring default one.
 
 
+![Screenshots](https://user-images.githubusercontent.com/55023827/123615624-2792b580-d80e-11eb-93f4-dc08261808ce.png) 
+
+
 ## How to integrate ToastJam into your project?
 
 ##### 1) Add the JitPack repository to the bottom of root build.gradle:
