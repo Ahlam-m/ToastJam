@@ -35,14 +35,14 @@ allprojects {
 **For gradle:**
 ```
 dependencies {
-  implementation 'com.github.Ahlam-M:ToastJam:v2.0.0'
+  implementation 'com.github.Ahlam-m:ToastJam:v2.0.0'
 }
 ```
 
 **For maven:**
 ```
 <dependency>
-  <groupId>com.github.Ahlam-M</groupId>
+  <groupId>com.github.Ahlam-m</groupId>
   <artifactId>ToastJam</artifactId>
   <version>v2.0.0</version>
 </dependency>
@@ -67,7 +67,7 @@ ToastJam.setup(this, "Hi there !")
 
 
 ## Issues
-Submit any issues here: [ToastJam Issues](https://github.com/Ahlam-M/ToastJam/issues)
+Submit any issues here: [ToastJam Issues](https://github.com/Ahlam-m/ToastJam/issues)
 
 
 ## Feedback
